@@ -185,27 +185,21 @@ void SubscribeAndPublish::xfcallback(const std_msgs::String::ConstPtr& msg)
 
 
   std::string dataString = msg->data;
-  if((dataString.compare("你好，请你介绍一下自己。") == 0))
+  if((dataString.find("介绍一下自己") !=-1))
   {
       char nameString[60] = "你好，我是聊天机器人，名叫小小。";
       text = nameString;
       std::cout<<text<<std::endl;
   }
-  else if((dataString.compare("月出于东山之上。") == 0))
+  else if((dataString.find("月出于东山之上")!=-1))
   {
       char helpString[40] = "徘徊于斗牛之间。";
       text = helpString;
       std::cout<<text<<std::endl;
   }
-  else if(dataString.compare("白露横江。") == 0)
+  else if((dataString.find("讲个笑话") != -1))
   {
-      char helpString[40] = "水光接天。";
-      text = helpString;
-      std::cout<<text<<std::endl;
-  }
-  else if((dataString.compare("纵一苇之所如。") == 0))
-  {
-      char helpString[40] = "凌万顷之茫然。 ";
+      char helpString[80] = "小王剪了中分，变成了小全。";      
       text = helpString;
       std::cout<<text<<std::endl;
   }
