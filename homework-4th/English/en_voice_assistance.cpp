@@ -185,27 +185,27 @@ void SubscribeAndPublish::xfcallback(const std_msgs::String::ConstPtr& msg)
 
 
   std::string dataString = msg->data;
-  if((dataString.compare("Hi!") == 0)||(dataString.compare("Hello!") == 0))
+   if((dataString.find("Hi") !=-1)||(dataString.find("Hello") !=-1))
   {
-      char nameString[40] = "Hi. Nice to meet you.";
+      char nameString[60] = "Hi. Nice to meet you.";
       text = nameString;
       std::cout<<text<<std::endl;
   }
-  else if((dataString.compare("What is your hobby?") == 0))
+  else if((dataString.find("introduce yourself")!=-1))
   {
-      char helpString[40] = "I like talking to people.";
+      char helpString[50] = "Yeah, My name is Jack. And I'm a chat robot.";
       text = helpString;
       std::cout<<text<<std::endl;
   }
-  else if(dataString.compare("Could you please introduce yourself?") == 0)
+  else if((dataString.find("your hobby") != -1))
   {
-      char helpString[50] = "Yeah,My name is Jack.And I'm a chat robot.";
+      char helpString[40] = "I like talking to people.";      
       text = helpString;
       std::cout<<text<<std::endl;
   }
-  else if((dataString.compare("Can you smile?") == 0))
+  else if((dataString.compare("Can you smile") == 0))
   {
-      char helpString[40] = "Ha-ha. ";
+      char helpString[80] = "Ha-ha.";      
       text = helpString;
       std::cout<<text<<std::endl;
   }
@@ -213,7 +213,7 @@ void SubscribeAndPublish::xfcallback(const std_msgs::String::ConstPtr& msg)
   {
       text = msg->data.c_str();
   }
-
+	
   /* 文本合成 */
   printf("开始合成 ...\n");
   ret = text_to_speech(text, filename, session_begin_params);
