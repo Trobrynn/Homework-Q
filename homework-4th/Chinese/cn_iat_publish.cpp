@@ -141,9 +141,9 @@ int main(int argc, char* argv[])
             int ret = MSP_SUCCESS;
             const char* login_params = "appid = 58249817, work_dir = .";
  
-	    // language =  zh_cn 则切换成中文
+	    // language =  en_us 则切换成英文
             const char* session_begin_params =
-                "sub = iat, domain = iat, language = en_us, "
+                "sub = iat, domain = iat, language = zh_cn, "
                 "accent = mandarin, sample_rate = 16000, "
                 "result_type = plain, result_encoding = utf8";
  
