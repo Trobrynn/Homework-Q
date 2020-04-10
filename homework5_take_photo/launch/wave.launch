@@ -1,0 +1,14 @@
+<launch>
+
+    <node pkg="rchomeedu_vision" name="wave_detect" type="wave_detect.py" required="false" output="screen">
+        <!--Output image-->
+        <param name="image_test_topic_name"         value="/iamge/test_object"/>
+        <!--Input image-->
+        <!--<param name="image_raw_topic_name"          value="/camera/rgb/image_raw"/>-->
+        <!--object postion in view-->
+        <param name="object_view_topic_name"        value="roi"/>
+        <!--check gender-->
+        <param name="check_gender"                  value="false" />
+    </node>
+
+</launch>
