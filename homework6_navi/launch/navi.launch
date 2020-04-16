@@ -1,0 +1,22 @@
+<launch>
+<!--
+  <include file="$(find turtlebot_gazebo)/launch/turtlebot_world.launch">
+    <arg name="world_file" value="/home/qian/catkin_ws/src/turtlebot/src/turtlebot_simulator/turtlebot_gazebo/worlds/new_world.world"/>
+</include>
+-->
+  <include file="$(find turtlebot_gazebo)/launch/amcl_demo.launch">
+    <arg name="map_file" value="/home/qian/catkin_ws/src/maps/my_map.yaml"/>
+</include>
+
+  <include file="$(find turtlebot_rviz_launchers)/launch/view_navigation.launch" />
+  
+    <node pkg="xfei_asr" type="navi_iat_publish" name="navi_iat_publish" output="screen"/>
+
+    <node pkg="xfei_asr" type="navi_voice_assistance" name="navi_voice_assistance" output="screen"/>
+
+
+  <node pkg="rchomeedu_navigation" type="nav.py" name="nav" output="screen"/>
+
+
+
+</launch>
